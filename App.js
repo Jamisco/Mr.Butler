@@ -6,14 +6,16 @@ import {
   Text,
   Button,
   Pressable,
+  TextInput,
   LogBox,
+  SafeAreaView,
 } from "react-native";
 
 import MainButton from "./components/MainButton";
+import MainTextInput from "./components/MainTextInput";
 
+/// THIS CODE is to ignore some stupid warning, more info found here https://github.com/facebook/react-native/issues/12981
 LogBox.ignoreLogs(["Setting a timer"]);
-
-/// ALL THIS CODE is to ignore some stupid warning, more info found here https://github.com/facebook/react-native/issues/12981
 
 import firebase from "firebase";
 
@@ -44,10 +46,15 @@ const firestore = firebase.firestore();
 
 //const analytics = firebase.analytics();
 
+const searchBarPosition = "30%";
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <MainButton text="Place content here" onPress={GetData} />
+      <SafeAreaView style={styles.searchBar}>
+        <MainTextInput placeholder="Search for a Store" />
+        <MainButton text="Click Me" onPress={GetData} />
+      </SafeAreaView>
     </View>
   );
 }
@@ -79,9 +86,16 @@ GetData = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 10,
     backgroundColor: "skyblue",
-    width: "100%",
-    padding: 20,
+    marginTop: 30,
+  },
+
+  searchBar: {
+    flexDirection: "row",
+    marginBottom: 5,
+    marginLeft: "10%",
+    marginRight: "15%",
+    // justifyContent: "center",
   },
 });

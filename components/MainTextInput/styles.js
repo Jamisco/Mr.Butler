@@ -1,12 +1,12 @@
 import { StyleSheet, Dimensions } from "react-native";
-import commonStyles from "../CommonStyles/styles.js";
+import commonStyles from "../CommonStyles/styles";
 
 const { height } = Dimensions.get("window");
 const phoneWeight = Dimensions.get("window").width;
 
 const newButtonStyle = StyleSheet.create({
   button: {
-    width: phoneWeight * 0.2,
+    width: phoneWeight * 0.65,
   },
 });
 
@@ -17,7 +17,7 @@ const buttonStyles = StyleSheet.flatten([
 
 const newContainerStyles = StyleSheet.create({
   container: {
-    backgroundColor: "green",
+    backgroundColor: "red",
   },
 });
 

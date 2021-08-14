@@ -4,9 +4,9 @@ import styles from "./styles";
 
 export default function MainButton({ text, onPress }) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <View style={styles.button}>
-        <Text style={styles.buttonText}>{text}</Text>
+    <TouchableOpacity onPress={onPress} style={styles.containerStyles}>
+      <View>
+        <Text style={styles.buttonStyles}>{text}</Text>
       </View>
     </TouchableOpacity>
   );

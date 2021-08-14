@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   },
 
   searchBar: {
+    top: "30%",
     flexDirection: "row",
     marginBottom: 5,
     marginLeft: "10%",

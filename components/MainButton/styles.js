@@ -6,21 +6,23 @@ const phoneWeight = Dimensions.get("window").width;
 
 const newButtonStyle = StyleSheet.create({
   button: {
-    width: phoneWeight * 0.2,
+    backgroundColor: "white",
   },
 });
 
+// combine this components styles with the common styles
 const buttonStyles = StyleSheet.flatten([
   newButtonStyle.button,
-  commonStyles.commonButtons,
+  commonStyles.mainSearchBar,
 ]);
 
 const newContainerStyles = StyleSheet.create({
   container: {
-    backgroundColor: "green",
+    //no container styles for now
   },
 });
 
+// combine this components style with the common styles
 const containerStyles = StyleSheet.flatten([
   newContainerStyles.container,
   commonStyles.commonContainer,

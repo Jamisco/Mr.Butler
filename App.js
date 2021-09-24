@@ -1,102 +1,170 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  Pressable,
-  TextInput,
-  LogBox,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import MainButton from "./components/MainButton";
 import MainTextInput from "./components/MainTextInput";
 
-/// THIS CODE is to ignore some stupid warning, more info found here https://github.com/facebook/react-native/issues/12981
-LogBox.ignoreLogs(["Setting a timer"]);
-
-import firebase from "firebase";
-
-import "firebase/firestore";
-import "firebase/auth";
-
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { func } from "prop-types";
-
-<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>;
-
-var firebaseConfig = {
-  apiKey: "AIzaSyBmecfpiS4LnD8e-LusycF8g1_yS_a694w",
-  authDomain: "mr-butler-v1-00001.firebaseapp.com",
-  projectId: "mr-butler-v1-00001",
-  storageBucket: "mr-butler-v1-00001.appspot.com",
-  messagingSenderId: "177324788010",
-  appId: "1:177324788010:web:bd06a40f174cf7477f3653",
-};
-
-if (firebase.apps.length === 0) {
-  firebase.initializeApp(firebaseConfig);
-}
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
-//const analytics = firebase.analytics();
-
-const searchBarPosition = "30%";
-
 export default function App() {
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.searchBar}>
-        <MainTextInput placeholder="Search for a Store" />
-        <MainButton text="Click Me" onPress={GetData} />
-      </SafeAreaView>
+    <View style={searchBarStyles.SupremeContainer}>
+      <View style={searchBarStyles.searchBarContainer}>
+        <MainTextInput
+          placeholder="Search for a Stores"
+          containerStyles={searchBarStyles.inputContainer}
+          buttonStyles={searchBarStyles.textInput}
+        />
+
+        <MainButton
+          text="Go"
+          containerStyles={searchBarStyles.buttonContainer}
+          buttonStyles={searchBarStyles.button}
+        />
+      </View>
+
+      <View style={hotCouponStyles.mainContainer}>
+        <MainButton
+          text="Hot Coupons"
+          containerStyles={hotCouponStyles.couponContainer}
+          buttonStyles={hotCouponStyles.button}
+          // onPress={() => this.props.navigation.navigate("HotCoupons")}
+        />
+      </View>
+
+      <View style={popularCouponStyles.mainContainer}>
+        <MainButton
+          text="Popular Coupons"
+          containerStyles={popularCouponStyles.couponContainer}
+          buttonStyles={popularCouponStyles.button}
+        />
+      </View>
+
+      <View style={seasonalCouponStyles.mainContainer}>
+        <MainButton
+          text="Seasonal Coupons"
+          containerStyles={seasonalCouponStyles.couponContainer}
+          buttonStyles={seasonalCouponStyles.button}
+        />
+      </View>
+
+      <View style={bottomNavStyles.mainContainer}>
+        <MainButton
+          text="Box 1"
+          containerStyles={bottomNavStyles.boxOneContainer}
+          buttonStyles={bottomNavStyles.boxOne}
+        />
+      </View>
     </View>
   );
 }
 
-GetData = () => {
-  const products = [];
-
-  firestore
-    .collection("Store")
-    .get()
-    .then((snapshot) => {
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        products.push(data.name);
-
-        // console.log("The data is" + data);
-      });
-
-      if (products.length != 0) {
-        products.forEach((data) => {
-          console.log(data);
-        });
-      } else {
-        console.log("No Data");
-      }
-    })
-    .catch((error) => console.log(error));
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 10,
+const searchBarStyles = StyleSheet.create({
+  SupremeContainer: {
+    flex: 1,
     backgroundColor: "skyblue",
-    marginTop: 30,
+    marginTop: "6%",
+    flexDirection: "column",
+    width: "100%",
+    height: "100%",
   },
 
-  searchBar: {
-    top: "30%",
+  searchBarContainer: {
     flexDirection: "row",
-    marginBottom: 5,
-    marginLeft: "10%",
-    marginRight: "15%",
-    // justifyContent: "center",
+    marginTop: "20%",
+    width: "100%",
+    alignSelf: "center",
+    justifyContent: "center",
+    // backgroundColor: "red", // enable only for debugging purposes
   },
+
+  inputContainer: {
+    width: "50%",
+    marginRight: 20,
+    fontSize: 20,
+  },
+
+  textInput: {
+    width: "50%",
+    marginRight: 10,
+  },
+
+  buttonContainer: {
+    width: "10%",
+  },
+
+  button: {
+    textAlignVertical: "center",
+  },
+});
+
+const hotCouponStyles = StyleSheet.create({
+  mainContainer: {
+    width: "90%",
+    alignSelf: "center",
+    marginTop: "20%",
+  },
+
+  couponContainer: {},
+
+  button: {
+    fontSize: 20,
+    textAlign: "left",
+    textAlignVertical: "center",
+    paddingLeft: 5,
+  },
+});
+
+const popularCouponStyles = StyleSheet.create({
+  mainContainer: {
+    width: "90%",
+    alignSelf: "center",
+    marginTop: "5%",
+  },
+
+  couponContainer: {},
+
+  button: {
+    fontSize: 20,
+    textAlign: "left",
+    textAlignVertical: "center",
+    paddingLeft: 5,
+  },
+});
+
+const seasonalCouponStyles = StyleSheet.create({
+  mainContainer: {
+    width: "90%",
+    alignSelf: "center",
+    marginTop: "15%",
+    height: "25%",
+    backgroundColor: "red",
+  },
+
+  couponContainer: {
+    height: "100%",
+  },
+
+  button: {
+    fontSize: 20,
+    textAlign: "center",
+    textAlignVertical: "top",
+    paddingTop: "5%",
+
+    height: "100%",
+  },
+});
+
+const bottomNavStyles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    width: "100%",
+    justifyContent: "flex-end",
+  },
+
+  boxOneContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+  },
+
+  boxOne: {},
+  // from left to right, box 1, box 2, box 3, box 4
 });

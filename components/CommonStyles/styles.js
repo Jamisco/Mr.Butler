@@ -2,9 +2,8 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const { phoneHeight, phoneWeight } = Dimensions.get("window");
 
-var commonStyles = StyleSheet.create({
-  commonButtons: {
-    backgroundColor: "white",
+var CommonStyles = StyleSheet.create({
+  mainSearchBar: {
     textAlign: "center",
     borderColor: "black",
     borderWidth: 1,
@@ -14,4 +13,4 @@ var commonStyles = StyleSheet.create({
   commonContainer: {},
 });
 
-export default commonStyles;
+export default CommonStyles;

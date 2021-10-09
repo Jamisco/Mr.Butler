@@ -148,7 +148,6 @@ const seasonalCouponStyles = StyleSheet.create({
   button: {
     fontSize: 20,
     textAlign: "center",
-    textAlignVertical: "top",
     paddingTop: "5%",
 
     height: "100%",

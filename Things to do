@@ -1,0 +1,3 @@
+For each coupon button, add a means to scroll infinitely and see coupons
+    - for example, I wanna scroll through hot coupons endlessly and see a list of empty coupons
+        denoting a coupon add. Each box of the coupon must be numbered, so coupon 1, 2, 3, 4 .... 100 etc

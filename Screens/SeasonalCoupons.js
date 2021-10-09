@@ -1,40 +1,42 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import MainButton from "../components/MainButton";
+import CouponLoader from "../components/CouponLoader";
 
 export default function PopularCouponscreen({ navigation }) {
   return (
-    <View style={seasonalCouponStyles.mainContainer}>
-      <MainButton
-        text="Seasonal Coupons"
-        containerStyles={seasonalCouponStyles.couponContainer}
-        buttonStyles={seasonalCouponStyles.button}
-        onPress={() => navigation.navigate("Home")}
-      />
+    <View style={styles.mainContainer}>
+
+    <CouponLoader
+        flatlistContainer={styles.flatlistContainer}
+        buttonStyle={styles.coupon}
+        couponContainerStyles={styles.couponContainer} />
     </View>
   );
 }
 
-const seasonalCouponStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   mainContainer: {
-    width: "90%",
-    alignSelf: "center",
-    marginTop: "15%",
-    height: "25%",
-    backgroundColor: "red",
+    width: "100%",
+    height: "100%",
+  },
+
+  flatlistContainer: {
+    height: "100%",
+    width: "100%",
+    backgroundColor: "skyblue",
+    alignContent: "space-between",
   },
 
   couponContainer: {
-    height: "100%",
+    height: 150, // dont use percentage height with flatlist, flatlist technically dont have a true height value
+    width: "42.5%",
+    marginVertical: 5,
+    marginLeft: "5%",
+    backgroundColor: "red",
   },
 
-  button: {
+  coupon: {
     fontSize: 20,
-    textAlign: "center",
-    textAlignVertical: "top",
-    paddingTop: "5%",
-
-    height: "100%",
   },
 });

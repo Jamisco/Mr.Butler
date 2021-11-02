@@ -4,10 +4,11 @@ import { StyleSheet, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Homescreen from "./Screens/Home";
-import HotCouponscreen from "./Screens/HotCoupons";
-import PopularCouponscreen from "./Screens/PopularCoupons";
-import SeasonalCouponscreen from "./Screens/SeasonalCoupons";
+import Homescreen from "./Screens/HomeScreen";
+import HotCouponscreen from "./Screens/HotCouponScreen";
+import PopularCouponscreen from "./Screens/PopularCouponScreen";
+import SeasonalCouponscreen from "./Screens/SeasonalCouponScreen";
+import CouponScreen from "./Screens/CouponDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,10 +19,8 @@ export default function App() {
         <Stack.Screen name="Home" component={Homescreen} />
         <Stack.Screen name="Hot Coupons" component={HotCouponscreen} />
         <Stack.Screen name="Popular Coupons" component={PopularCouponscreen} />
-        <Stack.Screen
-          name="Seasonal Coupons"
-          component={SeasonalCouponscreen}
-        />
+        <Stack.Screen name="Seasonal Coupons" component={SeasonalCouponscreen} />
+        <Stack.Screen name="Coupon Details" component={CouponScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,0 +1,41 @@
+For each coupon button, add a means to scroll infinitely and see coupons
+    - for example, I wanna scroll through hot coupons endlessly and see a list of empty coupons
+        denoting a coupon add. Each box of the coupon must be numbered, so coupon 1, 2, 3, 4 .... 100 etc
+    
+Now add functionality for each coupon box,
+    - SO lets make the red squares actually look like coupon
+        - for example,the squares will have pictures, text etc
+        - the squares must also be clickable to bring up more info about the coupon in another screens
+            - from here we can begin thinking about scraping actual coupons from the web
+
+10/11/21 - 10:04pm - done
+
+    - find a way to pass the navigation props to the coupon load so we can click on the mini coupon ad and navigate
+      to the coupon screens
+
+10/12/21 - 3:17am
+
+    - Case Banana
+        - Case Banana will be a program that will scan and collect the product information from grocery stores such as 
+            family, sams club or costco
+
+        - The program will acquire the picture, price and product description of items and store them in their
+          respective files.
+
+    - 10/15/21 - 3:48am
+        - Case Banana aint going so well, Damn Dynamic webpages making life too hard, Ive got 1 more trick up my sleeve
+          if that fails, then we do it the good old fashioned way, I will either
+
+          - manually copy and paste the html into a file and parse it using the Html parser
+            - images have a source property, which is pretty much a link, so we can use that accordingly
+          - copy and paste the pictures and text and create some sort of JSON for this program to use from there
+
+        - Never mind i figured it out and got it working, lets see what I can do with this
+    - 10/27/21 - 3:45am 
+      - Case Banana Accomplished - We got the info for Family Dollar Detergents, 
+        - for now the program only works for Family dollar, but we can easily modify it for other stores
+
+Now begin implementing the data and pictures retrieved from Case Banana into the program accordingly
+  - All data has been successfully implemented
+
+  

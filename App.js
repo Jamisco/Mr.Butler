@@ -12,6 +12,8 @@ import CouponScreen from "./Screens/CouponDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
+const searchBarPosition = "30%";
+
 export default function App() {
   return (
     <NavigationContainer>

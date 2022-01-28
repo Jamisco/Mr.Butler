@@ -86,7 +86,6 @@ const searchBarStyles = StyleSheet.create({
 
   textInput: {
     width: "50%",
-    marginRight: 10,
   },
 
   buttonContainer: {

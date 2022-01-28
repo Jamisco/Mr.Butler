@@ -8,6 +8,7 @@ export default function MainButton({
   containerStyles,
   buttonStyles,
   fontSize,
+  width,
 }) {
   return (
     <TouchableOpacity

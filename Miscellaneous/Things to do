@@ -38,4 +38,30 @@ Now add functionality for each coupon box,
 Now begin implementing the data and pictures retrieved from Case Banana into the program accordingly
   - All data has been successfully implemented
 
+  1/20/22 - 9:21pm
+
+    - The current objective is the find a way to load the coupons from Family Dollar onto the app
+      - Perhaps if possible hold a database for such things
+
+      - Please be aware, your objective is not to simply scrap the coupons off the website, although we might
+        have to do that,
+          - also you cant scrap coupons off coupons.com and shit, hella illegal. They own those coupons
+
+    - Best way, to go about this.... make it possible to sign in with an account - say google account,
+      then  .... ehh maybbe in the future
+
+    - Best bet, call the companies and ask them to send you the coupons so you can distribute them
+     - we can start with Chris,
+        - In the mean while scrap it, and test it - we are permitted to use for personal and noncommerical use
+
+    - Alright fuck this objective, I have decided its stupid
+
+  1/27/22 - 5:02
+
+    - Create registration screen
+       - done
+    - Now make registration screen work with firebase, its time we go online
+      - before we do that, look at other similar apps, flush our your UI, make sure its smooth,
+        - for ex that annoying white bar at top of screen should go AWAY!
+
   

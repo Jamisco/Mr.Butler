@@ -4,6 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import RegistrationScreen from "./Screens/RegistrationScreen";
 import Homescreen from "./Screens/HomeScreen";
 import HotCouponscreen from "./Screens/HotCouponScreen";
 import PopularCouponscreen from "./Screens/PopularCouponScreen";
@@ -17,7 +18,10 @@ const searchBarPosition = "30%";
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      {/* this line must come before the initial route */}
+
+        <Stack.Navigator initialRouteName="Register">
+        <Stack.Screen name="Register" component={RegistrationScreen} />
         <Stack.Screen name="Home" component={Homescreen} />
         <Stack.Screen name="Hot Coupons" component={HotCouponscreen} />
         <Stack.Screen name="Popular Coupons" component={PopularCouponscreen} />

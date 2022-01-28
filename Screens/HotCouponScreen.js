@@ -14,11 +14,6 @@ import DetergentInfo from "../Test-Data/FD-DetergentInfo";
 //     Notable the hotcouponscreens, popularcouponscreen etc
 
 
-// now that we got the pictures working, lets try to arrange the pictures as per the pictures in out design process
-
-
-// additionally, lets implement the coupon details screen so it is accurate to each particular coupon
-
 export default function HotCouponscreen({ navigation }) {
   return (
     <View style={styles.mainContainer}>

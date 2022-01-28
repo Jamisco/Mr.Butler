@@ -1,23 +1,20 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
-export default function CouponCard({
-  couponText,
-  couponPrice,
-  couponImage,
-  }) {
-    
-    const navigation = useNavigation();
-    var textFontSize = 20;
-    
-    return (
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Coupon Details", {
+export default function CouponCard({ couponText, couponPrice, couponImage }) {
+  const navigation = useNavigation();
+  var textFontSize = 20;
+
+  return (
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("Coupon Details", {
           couponText: couponText,
           couponPrice: couponPrice,
           couponImage: couponImage,
-      })}
+        })
+      }
       style={styles.containerStyles}
     >
       <Text
@@ -28,10 +25,7 @@ export default function CouponCard({
         {couponText}
       </Text>
 
-      <Image style={styles.imageStyle} source={couponImage}>
-
-      </Image>
-    
+      <Image style={styles.imageStyle} source={couponImage}></Image>
     </TouchableOpacity>
   );
 }
